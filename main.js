@@ -1,15 +1,14 @@
 let input = document.querySelector(".input");
 let btn = document.querySelector(".btn");
 let res = document.querySelector(".result");
-const deleteBtn = document.createElement("button");
 
 btn.addEventListener("click", () => {
-  res.innerHTML += ` <p class="text">${
-    input.value
-  } <button class="delete">${"Delete"}</button></p>
-    `;
-});
+  res.innerHTML += ` <p class="text">${input.value}<button class="delete">delete</button></p> `;
+  const text = document.querySelector(".text");
+  const reset = document.querySelector(".delete");
+  input.value = "";
 
-deleteBtn.addEventListener("click", () => {
-  res.delete();
+  reset.addEventListener("click", () => {
+    text.remove();
+  });
 });
